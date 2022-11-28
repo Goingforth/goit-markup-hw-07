@@ -278,10 +278,6 @@ img {
   margin-right: 30px;
 }*/
 /*   ---------------------------   */
-.section.differ {
-  padding-bottom: 0;
-}
-
 .examples {
   /* display: flex;*/
 }
@@ -336,25 +332,38 @@ img {
   margin-bottom: 16px;*/
 }
 /* стилизация секции Особенности*/
-
+.differ {
+  padding-bottom: 0;
+}
 .differences {
   display: flex;
 }
 .differences__property {
   width: calc((100% - 90px) / 4);
 }
-.differences__icon {
-  padding-top: 25px;
-  padding-bottom: 25px;
-  margin-bottom: 30px;
-  background-color: var(--background-button-portfolio);
-  text-align: center;
-}
 .differences__property:not(:last-child) {
   margin-right: 30px;
 }
-.differences__property .section-tytle {
+.differences__icon {
+  padding-top: 25px;
+  padding-bottom: 25px;
+
+  background-color: var(--background-button-portfolio);
+  text-align: center;
+  margin-bottom: 30px;
+}
+.differences__tytle {
+  font-size: 14px;
+  line-height: 1.14;
+
   margin-bottom: 10px;
+}
+.differences__text {
+  font-size: 14px;
+  line-height: 1.71;
+  /* or 171% */
+
+  color: var(--p-color);
 }
 /*  стилизация фона секции team*/
 
