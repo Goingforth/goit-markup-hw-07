@@ -196,7 +196,7 @@ img {
 
 /*   ----- конец стилизации Header-------*/
 /* -----стилизация секции hero-----*/
-.main-title {
+.hero__title {
   max-width: 696px;
   color: var(--color-white);
   font-weight: 900;
@@ -209,7 +209,7 @@ img {
   text-transform: uppercase;
   margin: 0 auto 30px;
 }
-.order.button {
+.hero__button {
   width: 216px;
   height: 50px;
   text-align: center;
@@ -217,9 +217,21 @@ img {
   margin: 0 auto;
   display: block;
   border-radius: 4px;
+  border: none;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  color: var(--color-white);
+  background-color: var(--accent-color);
+
+  cursor: pointer;
+
+  /* identical to box height, or 188% */
 }
 /* стилизация фона */
-.overlay {
+.hero__overlay {
   max-width: 1600px;
   height: 600px;
   margin-left: auto;
@@ -239,23 +251,6 @@ img {
   background-position: center;
   background-size: cover;
 }
-
-.button {
-  color: var(--color-white);
-  background-color: var(--accent-color);
-  border: none;
-  cursor: pointer;
-
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.88;
-  /* identical to box height, or 188% */
-
-  display: flex;
-  align-items: center;
-  text-align: center;
-  letter-spacing: 0.06em;
-}
 /* ---- конец стилизации секции hero -----*/
 /* стилизация секций */
 /*  общие свойства секций*/
@@ -270,13 +265,6 @@ img {
 
   margin-bottom: 50px;
 }
-/*.section__list {
-  display: flex;
-  justify-content: center;
-}
-.section__item:not(:last-child) {
-  margin-right: 30px;
-}*/
 /*   ---------------------------   */
 /*  стилизация секции Чем мы занимаемся*/
 .directions {
@@ -301,34 +289,6 @@ img {
   text-align: center;
   text-transform: uppercase;
   color: var(--color-white);
-}
-.section-tytle {
-  /*font-size: 14px;
-  line-height: 1.14;
-}
-.section-text {
-  color: var(--p-color);
-
-  font-size: 14px;
-  line-height: 1.71;
-  /* or 171% */
-}
-
-.section-tytle.name {
-  /*font-weight: 500;
-  font-size: 16px;
-  line-height: 1.19;
-
-  text-align: center;
-  /*margin-top: 30px;*/
-  /* margin-bottom: 10px;*/
-}
-.section-text.prof {
-  /* font-size: 16px;
-  line-height: 1.19;
-
-  text-align: center;
-  margin-bottom: 16px;*/
 }
 /*----------------------------------------*/
 /* стилизация секции Особенности*/
@@ -741,38 +701,34 @@ img {
   width: 100%;
   height: 100%;
   background-color: var(--color-backdrop);
-
+  /* анимация */
   opacity: 1;
   transition: opacity var(--time-hover) var(--function-time);
 }
-.backdrop.is-hidden {
+.backdrop--hidden {
   opacity: 0;
-
   pointer-events: none;
 }
 
-.backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scale(0.9);
-  opacity: 0;
-}
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%) scale(1);
 
   width: 528px;
   height: 581px;
   padding: 40px;
   background-color: var(--color-white);
 
-  transform: translate(-50%, -50%) scale(1);
-
   opacity: 1;
 
-  transition: transform var(--time-hover) var(--function-time),
-    opacity var(--time-hover) var(--function-time);
+  transition: transform var(--time-hover) var(--function-time);
 }
-.modal-button-close {
+.backdrop--hidden .modal {
+  transform: translate(-50%, -50%) scale(0.8);
+}
+.modal__close {
   display: flex;
   position: absolute;
   top: 8px;
@@ -780,44 +736,41 @@ img {
   width: 30px;
   height: 30px;
 
-  border-radius: 15px;
+  bottom: 6px;
 
+  border-radius: 15px;
   border: 1px solid var(--close-modal);
   background-color: var(--color-white);
 
   cursor: pointer;
-  fill: var(--color-black);
 }
-.close-modal {
+.modal__close--black {
   margin: auto;
-
+  fill: var(--color-black);
   transition: fill var(--time-hover) var(--function-time);
 }
-
-.modal-button-close:hover,
-.modal-button-close:focus {
+.modal__close:hover .modal__close--black,
+.modal__close:focus .modal__close--black {
   fill: var(--accent-color);
 }
-
-.form-field {
-  position: relative;
-
-  display: flex;
-  margin-bottom: 10px;
-  flex-direction: column;
-}
-.modal-header {
+.modal__header {
   margin-bottom: 12px;
 
   font-weight: 700;
   font-size: 20px;
   line-height: 1.15;
   text-align: center;
-  letter-spacing: 0.03em;
-
-  color: var(--header-color);
 }
-.form-field label {
+
+.form__field {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  margin-bottom: 10px;
+}
+
+.form__label {
   margin-bottom: 4px;
 
   font-size: 12px;
@@ -828,7 +781,31 @@ img {
 
   color: var(--p-color);
 }
-.comment {
+.form__input {
+  padding: 11px 12px 11px 42px;
+
+  border: 1px solid var(--color-border-inpur-modal);
+  border-radius: 4px;
+
+  transition: border var(--time-hover) var(--function-time);
+}
+
+.modal__icon {
+  position: absolute;
+  display: inline-block;
+
+  bottom: 11px;
+  left: 12px;
+
+  width: 18px;
+  height: 18px;
+  margin-right: 12px;
+
+  fill: var(--header-color);
+  transition: fill var(--time-hover) var(--function-time);
+}
+
+.form__comment {
   height: 120px;
   resize: none;
   padding: 12px;
@@ -837,7 +814,7 @@ img {
   border: 1px solid var(--color-border-inpur-modal);
   border-radius: 4px;
 }
-.comment::placeholder {
+.form__comment::placeholder {
   font-size: 12px;
   line-height: 1.17;
   /* identical to box height */
@@ -847,28 +824,20 @@ img {
   color: var(--p-color);
   transition: color var(--time-hover) var(--function-time);
 }
-.comment:hover,
-.comment:focus {
+.form__comment:hover,
+.form__comment:focus {
   border: 1px solid var(--accent-color);
   transition: border var(--time-hover) var(--function-time);
 
   outline: 0;
 }
-.comment:hover::placeholder,
-.comment:focus::placeholder {
+.form__comment:hover::placeholder,
+.form__comment:focus::placeholder {
   color: var(--accent-color);
 }
 
-.form-field input {
-  padding: 11px 12px 11px 42px;
-
-  border: 1px solid var(--color-border-inpur-modal);
-  border-radius: 4px;
-
-  transition: border var(--time-hover) var(--function-time);
-}
-.form-field input:hover,
-.form-field input:focus {
+.form__input:hover,
+.form__input:focus {
   border: 1px solid var(--accent-color);
   border-radius: 4px;
 
@@ -876,26 +845,11 @@ img {
   outline: 0;
 }
 
-.modal-icon {
-  position: absolute;
-  bottom: 11px;
-  left: 12px;
-  display: inline-block;
-
-  width: 18px;
-  height: 18px;
-  margin-right: 12px;
-
-  fill: var(--header-color);
-
-  transition: fill var(--time-hover) var(--function-time);
-}
-
-.form-field input:hover + .modal-icon,
-.form-field input:focus + .modal-icon {
+.form__input:hover + .modal__icon,
+.form__input:focus + .modal__icon {
   fill: var(--accent-color);
 }
-.form-policy {
+.form__policy {
   margin-bottom: 30px;
 
   font-weight: 400;
@@ -907,17 +861,30 @@ img {
 
   color: var(--p-color);
 }
-.link-policy {
-  color: var(--accent-color);
+.form__label--policy {
+  display: flex;
+  align-items: center;
 }
-/* кнопка */
-.modal-button-submit button {
+.form__agreement {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  /* identical to box height, or 171% */
+  color: var(--p-color);
+}
+.form__link--policy {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+/* ------------кнопка ------------------*/
+.modal__button {
+  display: block;
   width: 200px;
   height: 50px;
   text-align: center;
 
   margin: 0 auto;
-  display: block;
+
   border-width: 0;
   border-radius: 4px;
 
@@ -929,21 +896,20 @@ img {
   letter-spacing: 0.06em;
 
   color: var(--color-white);
-
   background-color: var(--accent-color);
   box-shadow: 0px 4px 4px var(--color-shadow-submit);
 
   transition: background-color var(--time-hover) var(--function-time);
 }
-.modal-button-submit button:hover,
-.modal-button-submit button:focus {
+.modal__button:hover,
+.modal__button:focus {
   background-color: var(--color-button-press-modal);
   cursor: pointer;
 }
-/* */
+/* ----------------------------------------------------------*/
 /* кастомный чекбокс*/
 
-.checkbox-icon {
+.form__checkbox {
   display: inline-block;
   width: 15px;
   height: 15px;
@@ -951,21 +917,14 @@ img {
   border: 2px solid var(--header-color);
   border-radius: 2px;
 }
-.checkbox-icon:hover,
-.checkbox-icon:focus {
+.form__checkbox:hover,
+.form__checkbox:focus {
   cursor: pointer;
 }
 
-.checkbox:checked + .checkbox-icon {
+.checkbox:checked + .form__checkbox {
   background-color: var(--accent-color);
   border: 0;
   background-image: url(../images/icon-check.svg);
-}
-.label-policy {
-  display: flex;
-  align-items: center;
-}
-.link-policy {
-  text-decoration: underline;
 }
 /*  end Модальное окно  */
