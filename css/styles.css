@@ -35,7 +35,7 @@
   --border-botton-header: #ececec;
   --color-icon-team: #afb1b8;
   --color-background-icon-footer: rgba(255, 255, 255, 0.1);
-  --color-background-fone-examples: rgba(47, 48, 58, 0.8);
+  --color-background-fone-directions: rgba(47, 48, 58, 0.8);
   --overlay-portfolio: rgba(33, 150, 243, 0.9);
   --time-hover: 250ms;
   --function-time: cubic-bezier(0.4, 0, 0.2, 1);
@@ -278,23 +278,22 @@ img {
   margin-right: 30px;
 }*/
 /*   ---------------------------   */
-.examples {
-  /* display: flex;*/
+/*  стилизация секции Чем мы занимаемся*/
+.directions {
+  display: flex;
 }
-
-.example:not(:last-child) {
-  /* margin-right: 30px;*/
+.directions__item:not(:last-child) {
+  margin-right: 30px;
 }
-
-.example-image {
+.directions__image {
   position: relative;
 }
-.example-image-tytle {
+.directions__tytle {
   position: absolute;
   bottom: 0;
   width: 100%;
   padding: 27px 0;
-  background-color: var(--color-background-fone-examples);
+  background-color: var(--color-background-fone-directions);
 
   font-weight: 700;
   font-size: 14px;
@@ -304,7 +303,7 @@ img {
   color: var(--color-white);
 }
 .section-tytle {
-  font-size: 14px;
+  /*font-size: 14px;
   line-height: 1.14;
 }
 .section-text {
@@ -331,6 +330,7 @@ img {
   text-align: center;
   margin-bottom: 16px;*/
 }
+/*----------------------------------------*/
 /* стилизация секции Особенности*/
 .differ {
   padding-bottom: 0;
