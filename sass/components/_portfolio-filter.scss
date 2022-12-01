@@ -1,17 +1,13 @@
-// стилизация секций портфолио
 .filter {
     display: flex;
     justify-content: center;
 }
-
 .portfolio__filter {
     margin-bottom: 50px;
 }
-
 .filter__choose:not(:last-child) {
     margin-right: 8px;
 }
-
 // ----- стилизация кнопок фильтра портфолио--------- 
 .filter__button {
     color: $color-header;
@@ -31,7 +27,6 @@
         background-color $time-hover $time-function,
         box-shadow $time-hover $time-function;
 }
-
 .filter__button--active {
     color: $color-white;
     background-color: $color-accent;
