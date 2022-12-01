@@ -21,10 +21,10 @@
     box-shadow: 0px 4px 4px $color-shadow-submit;
 
     transition: background-color $time-hover $time-function;
-}
 
-.modal__button:hover,
-.modal__button:focus {
-    background-color: $color-button-press-modal;
-    cursor: pointer;
+    &:hover,
+    &:focus {
+        background-color: $color-button-press-modal;
+        cursor: pointer;
+    }
 }

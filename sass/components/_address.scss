@@ -11,13 +11,12 @@
     color: $color-address-footer;
     margin-bottom: 9px;
     transition: color $time-hover $time-function;
+
+    &:hover,&:focus{
+    color: inherit;
+    }
 }
 
 .address__link--last {
     margin-bottom: 0px;
-}
-
-.address__link:hover,
-.address__link:focus {
-    color: inherit;
 }

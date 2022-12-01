@@ -4,6 +4,11 @@
 
 .team {
     display: flex;
+
+    & .social-networks__link:hover .social-networks__icon--grey,
+    & .social-networks__link:focus .social-networks__icon--grey {
+        fill: $color-white;
+    }
 }
 
 .team__members {
@@ -45,9 +50,4 @@
 .social-networks__icon--grey {
     fill: $color-icon-team;
     transition: fill $time-hover $time-function;
-}
-
-.team .social-networks__link:hover .social-networks__icon--grey,
-.team .social-networks__link:focus .social-networks__icon--grey {
-    fill: $color-white;
 }

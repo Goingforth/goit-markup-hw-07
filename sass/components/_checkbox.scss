@@ -5,11 +5,12 @@
 
     border: 2px solid $color-header;
     border-radius: 2px;
-}
-.form__checkbox:hover,
-.form__checkbox:focus {
+
+    &:hover, &:focus {
     cursor: pointer;
+    }
 }
+
 .checkbox:checked+.form__checkbox {
     background-color: $color-accent;
     border: 0;

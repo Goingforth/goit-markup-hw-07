@@ -22,9 +22,9 @@
 
     border-radius: 50%;
     transition: background $time-hover $time-function;
-}
 
-.social-networks__link:hover,
-.social-networks__link:focus {
-    background: $color-accent;
+    &:hover,
+    &:focus {
+        background: $color-accent;
+    }
 }

@@ -19,16 +19,15 @@
     color: $color-text;
     
     transition: color $time-hover $time-function;
-}
-//*   hover and focus 
-.connection__link:hover,
-.connection__link:focus {
-    color: $color-accent;
-}
 
-.connection__link:hover .connection__icon,
-.connection__link:focus .connection__icon {
-    fill: $color-accent;
+    &:hover,
+    &:focus {
+        color: $color-accent;
+    }
+    &:hover .connection__icon,
+    &:focus .connection__icon {
+        fill: $color-accent;
+    }
 }
 //*     icon   
 .connection__icon {

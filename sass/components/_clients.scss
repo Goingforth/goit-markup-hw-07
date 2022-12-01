@@ -12,8 +12,15 @@
     border-radius: 4px;
 
     transition: border $time-hover $time-function;
-}
 
+    &:hover, &:focus{
+    border: 1px solid $color-accent;
+    }
+    &:hover .clients__icon,
+    &:focus .clients__icon {
+    fill: $color-accent;
+    }
+}
 .clients__item:not(:last-child) {
     margin-right: 30px;
 }
@@ -31,15 +38,4 @@
     fill: $color-icon-team;
     transition: fill $time-hover $time-function;
 }
-
-.clients__link:hover .clients__icon,
-.clients__link:focus .clients__icon {
-    fill: $color-accent;
-}
-
-.clients__item:hover,
-.clients__item:focus {
-    border: 1px solid $color-accent;
-}
-
  // конец стилизации секции постоянніе клиенты 

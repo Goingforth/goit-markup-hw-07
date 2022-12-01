@@ -28,10 +28,14 @@
     border-width: 0;
     box-shadow: 0px 4px 4px $color-shadow-submit;
 
+    &:hover,
+    &:focus {
+        box-shadow: 0px 4px 4px $color-shadow-submit;
+    }
+
     cursor: pointer;
     // transition: box-shadow $time-hover $time-function;
 }
-
 .subscription__span {
     margin-right: 10px;
     font-weight: 700;
@@ -40,11 +44,6 @@
     // identical to box height, or 188% 
     color: $color-white;
 }
-
 .subscription__icon {
     fill: $color-white;
-}
-.subscription__button:hover,
-.subscription__button:focus {
-    box-shadow: 0px 4px 4px $color-shadow-submit;
 }

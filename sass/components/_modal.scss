@@ -34,17 +34,17 @@
     background-color: $color-white;
 
     cursor: pointer;
-}
-
-.modal__close--black {
-    margin: auto;
-    fill: $color-black;
-    transition: fill $time-hover $time-function;
-}
-
-.modal__close:hover .modal__close--black,
-.modal__close:focus .modal__close--black {
-    fill: $color-accent;
+ 
+    &--black {
+        margin: auto;
+        fill: $color-black;
+        transition: fill $time-hover $time-function;
+    }
+    
+    &:hover &--black,
+    &:focus &--black {
+            fill: $color-accent;
+    }
 }
 
 .modal__header {
@@ -55,5 +55,3 @@
     line-height: 1.15;
     text-align: center;
 }
-
-////////////////////////////////////

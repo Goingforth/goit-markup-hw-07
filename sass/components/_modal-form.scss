@@ -15,7 +15,13 @@
     letter-spacing: 0.01em;
 
     color: $color-text;
+
+    &--policy {
+        display: flex;
+        align-items: center;
+    }
 }
+
 .form__input {
     padding: 11px 12px 11px 42px;
 
@@ -23,6 +29,20 @@
     border-radius: 4px;
 
     transition: border $time-hover $time-function;
+
+    &:hover,
+    &:focus {
+        border: 1px solid $color-accent;
+        border-radius: 4px;
+    
+        cursor: pointer;
+        outline: 0;
+    }
+    
+    &:hover+.form__icon,
+    &:focus+.form__icon {
+        fill: $color-accent;
+    }
 }
 .form__icon {
     position: absolute;
@@ -46,39 +66,28 @@
 
     border: 1px solid $color-border-inpur-modal;
     border-radius: 4px;
-}
-.form__comment::placeholder {
-    font-size: 12px;
-    line-height: 1.17;
-    // identical to box height 
 
-    letter-spacing: 0.01em;
-
-    color: $color-text;
-    transition: color $time-hover $time-function;
-}
-.form__comment:hover,
-.form__comment:focus {
-    border: 1px solid $color-accent;
-    transition: border $time-hover $time-function;
-
-    outline: 0;
-}
-.form__comment:hover::placeholder,
-.form__comment:focus::placeholder {
-    color: $color-accent;
-}
-.form__input:hover,
-.form__input:focus {
-    border: 1px solid $color-accent;
-    border-radius: 4px;
-
-    cursor: pointer;
-    outline: 0;
-}
-.form__input:hover+.form__icon,
-.form__input:focus+.form__icon {
-    fill: $color-accent;
+    &::placeholder {
+        font-size: 12px;
+        line-height: 1.17;
+        // identical to box height 
+    
+        letter-spacing: 0.01em;
+    
+        color: $color-text;
+        transition: color $time-hover $time-function;
+    }
+    &:hover,
+    &:focus {
+        border: 1px solid $color-accent;
+        transition: border $time-hover $time-function;
+    
+        outline: 0;
+    }
+    &:hover::placeholder,
+    &:focus::placeholder {
+        color: $color-accent;
+    }
 }
 .form__policy {
     margin-bottom: 30px;
@@ -92,10 +101,7 @@
 
     color: $color-text;
 }
-.form__label--policy {
-    display: flex;
-    align-items: center;
-}
+
 .form__agreement {
     font-weight: 400;
     font-size: 14px;

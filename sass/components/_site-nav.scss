@@ -10,8 +10,6 @@
 .site-nav__item:not(:first-child) {
     margin-left: 50px;
 }
-
-//*      
 //*     link   
 .site-nav__link {
     display: block;
@@ -22,28 +20,29 @@
     padding: 32px 0px 28px;
 
     transition: color $time-hover $time-function;
+
+    &:hover,
+    &:focus {
+        color: $color-accent;
+    }
 }
-//*   hover and focus 
-.site-nav__link:hover,
-.site-nav__link:focus {
-    color: $color-accent;
-}
+
 //*      link active    
 .site-nav__link--active {
     position: relative;
     color: $color-accent;
-}
 
-.site-nav__link--active::after {
-    position: absolute;
-    left: 0;
-    bottom: -1px;
-
-    content: "";
-    display: block;
-    width: 100%;
-    height: 4px;
-    border-radius: 2px;
-
-    background-color: $color-accent;
+    &::after {
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+    
+        content: "";
+        display: block;
+        width: 100%;
+        height: 4px;
+        border-radius: 2px;
+    
+        background-color: $color-accent;
+    }
 }
