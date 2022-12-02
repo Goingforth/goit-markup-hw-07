@@ -13,9 +13,6 @@
 //*     link   
 .site-nav__link {
     display: block;
-}
-
-.site-nav__link {
     color: $color-header;
     padding: 32px 0px 28px;
 
@@ -26,7 +23,6 @@
         color: $color-accent;
     }
 }
-
 //*      link active    
 .site-nav__link--active {
     position: relative;

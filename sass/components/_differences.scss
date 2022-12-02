@@ -9,12 +9,10 @@
 
 .differences__property {
     width: calc((100% - 90px) / 4);
+    &:not(:last-child) {
+        margin-right: 30px;
+    }
 }
-
-.differences__property:not(:last-child) {
-    margin-right: 30px;
-}
-
 .differences__icon {
     padding-top: 25px;
     padding-bottom: 25px;

@@ -9,10 +9,12 @@
     &:hover, &:focus {
     cursor: pointer;
     }
-}
-
-.checkbox:checked+.form__checkbox {
-    background-color: $color-accent;
-    border: 0;
-    background-image: url(../images/icon-check.svg);
+    &--before {
+        margin-right: 7px;
+    }
+    .checkbox:checked+& {
+        background-color: $color-accent;
+        border: 0;
+        background-image: url(../images/icon-check.svg);
+    }
 }
